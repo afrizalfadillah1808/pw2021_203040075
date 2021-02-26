@@ -24,7 +24,7 @@
 */
 
 // strtotime
-echo date("l", strtotime("18 aug 1985"));
+echo date("l", strtotime("25 aug 1985"));
 
 
 ?>
