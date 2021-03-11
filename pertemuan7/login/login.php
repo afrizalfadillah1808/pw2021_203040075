@@ -1,6 +1,5 @@
 <?php 
 
-    // Hervin Fakhrul - 203040097
 
 // cek apakah tombol submit sudah tekan atau belum
 if( isset($_POST["submit"]) ) {
