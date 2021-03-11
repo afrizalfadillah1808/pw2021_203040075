@@ -20,7 +20,7 @@ $mahasiswa = [
         "nama" => "Muhammad Rizky",
         "NRP" => "203040500",
         "Jurusan" => "Teknik Informatika",
-        "Email" => "muhammadrizky@gmail.com"
+        "Email" => "muhammadrizky14@gmail.com"
     ]
     ];
 
