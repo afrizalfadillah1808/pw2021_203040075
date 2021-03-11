@@ -9,9 +9,9 @@ $mahasiswa = [
 		"gambar" => "vin.jpg"
 	],
 	[
-		"nama" => "Nazwa Cecillia", 
+		"nama" => "Cecillia Vany", 
 		"nrp" => "203040500",
-		"email" => "nzwccll@gmail.com",
+		"email" => "vnycclll@gmail.com",
 		"jurusan" => "Fakultas Kedokteran Gigi",
 		"gambar" => "wawa.jpg"
 	]
