@@ -1,3 +1,12 @@
+<!-- 
+    Nama: Muhammad Afrizal Fadillah 
+    Kelas: B
+    NPM: 203040075
+    Shift: Jumat jam 10.00
+    Praktikum Pemrograman Web
+ -->
+
+
 <?php 
 $pemainBola = [
     [

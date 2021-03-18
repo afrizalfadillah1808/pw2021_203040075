@@ -1,10 +1,19 @@
+<!-- 
+    Nama: Muhammad Afrizal Fadillah 
+    Kelas: B
+    NPM: 203040075
+    Shift: Jumat jam 10.00
+    Praktikum Pemrograman Web
+ -->
+
+
 <?php 
 $barang1 = [
     [
         "nama"=>"LAPTOP",
         "deskripsi"=>"LAPTOP WARNA SILVER",
         "detailSpek"=>"RAM 8GB - HDD 1TB - RAIZEN 5",
-        "harga"=>4560,
+        "harga"=>5460,
         "stokBarang"=>15,
         "foto"=>"4.png"
     ],
