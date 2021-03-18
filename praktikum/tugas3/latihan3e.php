@@ -10,18 +10,6 @@
 <?php 
 $barang1 = [
     [
-        "nama"=>"LAPTOP",
-        "deskripsi"=>"LAPTOP WARNA SILVER",
-        "detailSpek"=>"RAM 8GB - HDD 1TB - RAIZEN 5",
-        "harga"=>5460,
-        "stokBarang"=>15,
-        "foto"=>"4.png"
-    ],
-   
-];
-
-$barang2 = [
-    [
         "nama"=>"HANDPHONE",
         "deskripsi"=>"HANDPHONE WARNA HITAM",
         "detailSpek"=>"RAM 8GB - ROM 128GB - OS 10",
@@ -31,6 +19,7 @@ $barang2 = [
     ],
    
 ];
+
 
 function rupiahIDR($duit){
     return "Rp" . number_format($duit,2,',','.');
