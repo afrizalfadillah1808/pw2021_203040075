@@ -1,3 +1,13 @@
+<!-- 
+    NAMA : Muhammad Afrizal Fadillah
+    NPM : 203040075
+    Kelas : B
+    MataKuliah : Pemrograman Web
+    Shift : Jumat, 10.00 WIB
+ -->
+
+
+
 <?php
     require 'functions.php';
     $mahasiswa = query("SELECT * FROM mahasiswa")
