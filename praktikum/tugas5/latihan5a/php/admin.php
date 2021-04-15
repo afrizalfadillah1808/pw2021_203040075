@@ -2,7 +2,7 @@
     NAMA : Muhammad Afrizal Fadillah
     NPM : 203040075
     Kelas : B
-    MataKuliah : Pemrograman Web
+    MataKuliah : Praktikum Pemrograman Web
     Shift : Jumat, 10.00 WIB
  -->
 

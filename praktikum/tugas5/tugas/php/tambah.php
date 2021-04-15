@@ -35,11 +35,12 @@ if (isset($_POST['tambah'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tugas</title>
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/style2.css">    
+
 </head>
 <body>
     <h3>Form Tambah Data Mahasiswa</h3>
-    <form class="form" action="" method="post">
+    <form class="form" action="" method="post" style="background-color: #97a3a3;">
         <ul>
             <li>
                 <label for="nrp">NRP :</label><br>
@@ -55,8 +56,8 @@ if (isset($_POST['tambah'])) {
             </li>
             <li>
                 <label for="jurusan">jurusan :</label><br>
-                <select name="jurusan" id="jurusan" required>
-                    <option value="">---------- Pilih Jurusan ----------</option>
+                <select class="browser-default" name="jurusan" id="jurusan" required>
+                    <option value="" disabled selected>---------- Pilih Jurusan ----------</option>
                     <option value="Teknik Industri">Teknik Industri</option>
                     <option value="Teknik Informatika">Teknik Informatika</option>
                     <option value="Teknik Pangan">Teknik Pangan</option>
@@ -84,3 +85,4 @@ if (isset($_POST['tambah'])) {
     </form>
 </body>
 </html>
+

@@ -24,21 +24,23 @@
     <title>tugas</title>
     <link rel="stylesheet" href="../css/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
     <div class="add">
-        <a href="tambah.php"><button>Tambah Data</button></a>
+        <a href="tambah.php"><button class="waves-effect waves-light btn">Tambah Data</button></a>
     </div>
     <br>
     <form class="cari" action="" method="GET">
         <input type="text" name="keyword" autofocus placeholder="Cari Mahasiswa.." autocomplete="off">
-        <button type="submit" name="cari">Cari!</button>
-        <button type="submit">
-            <a href="admin.php" style="text-decoration: none; color: black;">Kembali</a>
+        <button type="submit" name="cari" class="waves-effect waves-light btn">Cari!</button>
+        <button type="submit" class="waves-effect waves-light btn">
+            <a href="admin.php" style="text-decoration: none; color: white;">Kembali</a>
         </button>
     </form>
     <br>
-    <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0">
+    <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
         <tr>
             <th>No</th>
             <th>Opsi</th>
@@ -60,8 +62,8 @@
             <tr>
                 <td><?= $i; ?></td>
                 <td>
-                    <a href="ubah.php?id=<?=$mhs['id'] ?>"><button>Ubah</button></a>
-                    <a href="hapus.php?id=<?=$mhs['id'] ?>" onclick="return confirm('Hapus Data??')"><button>Hapus</button></a>
+                    <a href="ubah.php?id=<?=$mhs['id'] ?>"><button class="btn btn-secondary">Ubah</button></a>
+                    <a href="hapus.php?id=<?=$mhs['id'] ?>" onclick="return confirm('Hapus Data??')"><button class="btn btn-secondary">Hapus</button></a>
                 </td>
                 <td><img src="../assets/img/<?= $mhs['img']; ?>" alt=""></td>
                 <td><?= $mhs['nrp']; ?></td>
@@ -73,5 +75,8 @@
         <?php endforeach; ?>
     <?php endif; ?>
     </table>
+    <br>
+    <br>
+    <button class="btn btn-info"><a href="../index.php" style="text-decoration: none; color: white;">Kembali</a></button>
 </body>
 </html>

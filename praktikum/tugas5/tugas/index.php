@@ -18,10 +18,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tugas</title>
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-    <button><a href="php/admin.php">Edit</a></button>
-    <table class="table" border="1" cellpadding="15" cellspacing="0">
+    <button class="btn btn-info"><a href="php/admin.php" style="text-decoration: none; color: white;">Edit</a></button>
+    <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
         <tr>
           <th>No</th>
           <th>Foto</th>
@@ -41,7 +43,7 @@
              <td><?=$mhs["email"]; ?></td>
              <td><?=$mhs["jurusan"]; ?></td>
              <td>
-                <a href="php/detail.php?id=<?=$mhs['id'] ?>" style="text-decoration: none;">Lihat</a>
+                <a href="php/detail.php?id=<?=$mhs['id'] ?>" style="text-decoration: none; color: white;">Lihat</a>
             </td>
          </tr>
          <?php $i++;?>
