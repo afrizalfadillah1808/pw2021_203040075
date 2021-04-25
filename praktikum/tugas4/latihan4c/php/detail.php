@@ -23,15 +23,18 @@
         <div class="gambar">
             <img width="200px" src="../assets/img/<?= $mahasiswa["img"]; ?>" ; alt="">
         </div>
-    <div class="keterangan">
-        <p><?= $mahasiswa["nrp"]; ?></p>
-        <p><?= $mahasiswa["nama"]; ?></p>
-        <p><?= $mahasiswa["email"]; ?></p>
-        <p><?= $mahasiswa["jurusan"]; ?></p>
+        <div class="keterangan">
+            <p><?= $mahasiswa["nrp"]; ?></p>
+            <p><?= $mahasiswa["nama"]; ?></p>
+            <p><?= $mahasiswa["email"]; ?></p>
+            <p><?= $mahasiswa["jurusan"]; ?></p>
+        </div>
     </div>
-
-        <button class="tombol-kembali"><a href="../index.php">Kembali</a></button>
-    </div>
+    
+    <button class="tombol-kembali"><a href="../index.php">Kembali</a></button>
+    
     
 </body>
 </html>
+
+
