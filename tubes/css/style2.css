@@ -1,0 +1,9 @@
+.nav-wrapper a {
+  text-decoration: none;
+}
+
+.container img {
+  background-position: center;
+  background-size: cover;
+  height: 1000px;
+}
