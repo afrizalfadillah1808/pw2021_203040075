@@ -46,7 +46,7 @@
         </button>
     </form>
     <br>
-    <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
+    <table class="striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
         <tr>
             <th>No</th>
             <th>Opsi</th>

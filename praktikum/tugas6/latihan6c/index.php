@@ -22,32 +22,35 @@
 
 </head>
 <body>
-    <button class="btn btn-info"><a href="php/login.php" style="text-decoration: none; color: white;">Masuk ke halaman admin</a></button>
-    <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
-        <tr>
-          <th>No</th>
-          <th>Foto</th>
-          <th>NRP</th>
-          <th>Nama</th>
-          <th>Email</th>
-          <th>Jurusan</th>
-          <th>#</th>
-        </tr>
-		<?php $i = 1; ?>
-		<?php foreach ($mahasiswa as $mhs) : ?>
-         <tr>
-             <td><?=$i; ?></td>
-             <td><img src="assets/img/<?=$mhs["img"]; ?>"></td>
-             <td><?=$mhs["nrp"]; ?></td>
-             <td><?=$mhs["nama"]; ?></td>
-             <td><?=$mhs["email"]; ?></td>
-             <td><?=$mhs["jurusan"]; ?></td>
-             <td>
-                <a href="php/detail.php?id=<?=$mhs['id'] ?>" style="text-decoration: none; color: white;">Lihat</a>
-            </td>
-         </tr>
-         <?php $i++;?>
-        <?php endforeach; ?>
-    </table>
+    <div class="container">
+        <button class="btn btn-info"><a href="php/login.php" style="text-decoration: none; color: white;">Masuk ke halaman admin</a></button>
+        <br><br>
+        <table class="striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
+            <tr>
+            <th>No</th>
+            <th>Foto</th>
+            <th>NRP</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Jurusan</th>
+            <th>#</th>
+            </tr>
+            <?php $i = 1; ?>
+            <?php foreach ($mahasiswa as $mhs) : ?>
+            <tr>
+                <td><?=$i; ?></td>
+                <td><img src="assets/img/<?=$mhs["img"]; ?>"></td>
+                <td><?=$mhs["nrp"]; ?></td>
+                <td><?=$mhs["nama"]; ?></td>
+                <td><?=$mhs["email"]; ?></td>
+                <td><?=$mhs["jurusan"]; ?></td>
+                <td>
+                    <a href="php/detail.php?id=<?=$mhs['id'] ?>" style="text-decoration: none; color: white;">Lihat</a>
+                </td>
+            </tr>
+            <?php $i++;?>
+            <?php endforeach; ?>
+        </table>
+    </div>
 </body>
 </html>
