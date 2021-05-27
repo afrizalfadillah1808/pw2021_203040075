@@ -36,7 +36,6 @@ $buku = query("SELECT * FROM buku");
     <nav class="place c2" style="background-color: #eceff1 ;">
       <div class="container">
         <div class="nav-wrapper">
-          <img src="assets/img/book.svg" style="width: 3%" class="responsive-img">
           <a href="#home" class="brand-logo" style="color: black;">Libro.</a>
           <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
