@@ -1,9 +1,30 @@
-.nav-wrapper a {
-  text-decoration: none;
+.slider h3, .slider h5, {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+} 
+
+
+section, footer {
+    padding: 20px 0;
 }
 
-.container img {
-  background-position: center;
-  background-size: cover;
-  height: 1000px;
+.nav-wrapper a {
+    text-decoration: none;
+}
+
+ul .sidenav a {
+    text-decoration: none;
+}
+.slides h5 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6);
+    display: inline;
+    background-image: linear-gradient( rgb(206, 206, 206),  rgb(206, 206, 206));
+    background-size: 0% 20px;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background .5s ease-out;
+}
+
+.slides h5:hover {
+    background-size: 100% 20px;
 }

@@ -1,32 +1,14 @@
-<!-- 
-    NAMA : Muhammad Afrizal Fadillah
-    NPM : 203040075
-    Kelas : B
-    MataKuliah : Praktikum Pemrograman Web
-    Shift : Jumat, 10.00 WIB
- -->
-
 <?php 
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit;
-}
-
 require 'functions.php';
 
 if (isset($_POST['tambah'])) {
-    if (tambah($_POST) > 0) {
+    if(tambah($_POST) > 0 ) {
         echo "<script>
-                    alert('Data Berhasil ditambahkan!');
-                    document.location.href = 'admin.php';
-              </script>";
+                alert('data berhasil ditambahkan');
+                document.location.href = 'admin.php';
+            </script>";
     } else {
-        echo    "<script>
-                    alert('Data Gagal ditambahkan!');
-                    document.location.href = 'admin.php';
-                </script>";
+        echo "data gagal ditambahkan!";
     }
 }
 
@@ -41,45 +23,40 @@ if (isset($_POST['tambah'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tugas</title>
+    <title>Libro.</title>
     <link rel="stylesheet" href="../css/style2.css">    
 
 </head>
 <body>
-    <h3>Form Tambah Data Mahasiswa</h3>
-    <form class="form" action="" method="post" style="background-color: #97a3a3;">
+    <h3>Form Tambah Data Buku</h3>
+    <form class="form" action="" method="POST" style="background-color: #97a3a3;">
         <ul>
             <li>
-                <label for="nrp">NRP :</label><br>
-                <input type="text" name="nrp" id="nrp" required><br><br>
+                <label for="judul">Judul :</label><br>
+                <input type="text" name="judul" id="judul" autofocus required><br><br>
             </li>
             <li>
-                <label for="nama">Nama :</label><br>
-                <input type="text" name="nama" id="nama" required><br><br>
+                <label for="pengarang">Pengarang :</label><br>
+                <input type="text" name="pengarang" id="pengarang" required><br><br>
             </li>
             <li>
-                <label for="email">Email :</label><br>
-                <input type="text" name="email" id="email" required><br><br>
+                <label for="penerbit">Penerbit :</label><br>
+                <input type="text" name="penerbit" id="penerbit" required><br><br>
             </li>
             <li>
-                <label for="jurusan">jurusan :</label><br>
-                <select class="browser-default" name="jurusan" id="jurusan" required>
-                    <option value="" disabled selected>---------- Pilih Jurusan ----------</option>
-                    <option value="Teknik Industri">Teknik Industri</option>
-                    <option value="Teknik Informatika">Teknik Informatika</option>
-                    <option value="Teknik Pangan">Teknik Pangan</option>
-                    <option value="Teknik Mesin">Teknik Mesin</option>
-                    <option value="Teknik Lingkungan">Teknik Lingkungan</option>
-                    <option value="PWK">PWK</option>
-                    <option value="Kedokteran Gigi">Kedokteran Gigi</option>
-                </select>
+                <label for="tahun">Tahun :</label><br>
+                <input type="text" name="tahun" id="tahun" required><br><br>
+            </li>
+            <li>
+                <label for="harga">Harga :</label><br>
+                <input type="text" name="harga" id="harga" required><br><br>
             </li>
             <br>
             <li>
                 <div class="file-field input-field">
                     <div class="btn">
                         <span>File</span>
-                        <input type="file" name="img" id="img" required><br>
+                        <input type="file" name="img" id="img"><br>
                     </div>
                 </div>
             </li>
@@ -90,6 +67,8 @@ if (isset($_POST['tambah'])) {
             </button>
         </ul>
     </form>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>
 

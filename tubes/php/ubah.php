@@ -1,100 +1,94 @@
-<!-- 
-    NAMA : Muhammad Afrizal Fadillah
-    NPM : 203040075
-    Kelas : B
-    MataKuliah : Praktikum Pemrograman Web
-    Shift : Jumat, 10.00 WIB
- -->
-
 <?php 
-session_start();
 
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit;
-}
+    session_start();
 
-require 'functions.php';
-
-$id = $_GET['id'];
-$mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
-
-if (isset($_POST['ubah'])) {
-    if (ubah($_POST) > 0) {
-        echo "<script>
-                    alert('Data Berhasil diubah!');
-                    document.location.href = 'admin.php';
-              </script>";
-    } else {
-        echo    "<script>
-                    alert('Data Gagal diubah!');
-                    document.location.href = 'admin.php';
-                </script>";
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.php");
+        exit;
     }
-}
 
+    // koneksi ke DBMS
+    require 'functions.php' ;
+
+    // ambil data di URL
+    $id = $_GET["id"] ;
+
+    // query data
+    $buku = query("SELECT * FROM buku WHERE id = $id")[0];
+
+    // // cek tombol submit sudah ditekan atau belum
+    if ( isset($_POST['ubah']) ) {
+        // cek data apakah berhasil diubah atau tidak
+          if ( ubah($_POST) > 0 ) {
+              echo "<script>
+                      alert('Data Berhasil Diubah!') ;
+                      document.location.href = 'admin.php' ;
+                    </script>
+                   " ;
+          } else {
+            echo "<script>
+                    alert('Data Gagal Diubah!') ;
+                    document.location.href = 'admin.php' ;
+                  </script>
+                 " ;
+          }
+        }
 ?>
 
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tugas</title>
-    <link rel="stylesheet" href="../css/style2.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-    <h3>Form Ubah Data Mahasiswa</h3>
-    <form class="form" action="" method="post">
-                <input type="hidden" name="id" value="<?=$mhs['id']; ?>">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                
-        <ul>
-            <li>
-                <label for="nrp">NRP :</label><br>
-                <input type="text" name="nrp" id="nrp" required value="<?=$mhs['nrp']; ?>"><br><br>
-            </li>
-            <li>
-                <label for="nama">Nama :</label><br>
-                <input type="text" name="nama" id="nama" required value="<?=$mhs['nama']; ?>"><br><br>
-            </li>
-            <li>
-                <label for="email">Email :</label><br>
-                <input type="text" name="email" id="email" required value="<?=$mhs['email']; ?>"><br><br>
-            </li>
-            <li>
-                <label for="jurusan">jurusan :</label><br>
-                <select name="jurusan" id="jurusan" required value="<?=$mhs['jurusan']; ?>">
-                    <option value="">---------- Pilih Jurusan ----------</option>
-                    <option value="Teknik Industri">Teknik Industri</option>
-                    <option value="Teknik Informatika">Teknik Informatika</option>
-                    <option value="Teknik Pangan">Teknik Pangan</option>
-                    <option value="Teknik Mesin">Teknik Mesin</option>
-                    <option value="Teknik Lingkungan">Teknik Lingkungan</option>
-                    <option value="PWK">PWK</option>
-                    <option value="Kedokteran Gigi">Kedokteran Gigi</option>
-                </select>
-            </li>
-            <br>
-            <li>
-                <div class="file-field input-field">
-                    <div class="btn">
-                        <span>File</span>
-                        <input type="file" name="img" id="img" required value="<?=$mhs['img']; ?>"><br>
-                    </div>
-                </div>
-            </li>
-            <br>
-            <br><br><button type="submit" name="ubah">Ubah Data</button>
-            <button type="submit">
-                <a href="admin.php" style="text-decoration: none; color: black;">Kembali</a>
-            </button>
-        </ul>
-    </form>
-</body>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Ubah Data</title>
+  </head>
+  <body>
+    <!-- Form -->
+    <h3 class="text-center pt-5">Ubah Data</h3>
+
+    <div class="container pt-5">
+        <form action="" method="POST">
+        <input type="hidden" name="id" value= "<?= $buku["id"] ; ?>">
+            <div class="mb-3">
+                <label for="img" class="col-sm-2 col-form-label">Gambar</label>
+                    <input type="file" class="form-control" id="img" name="img" value="<?= $buku["img"] ; ?>">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="col-sm-2 col-form-label">Judul</label>
+                    <input type="text" class="form-control" id="judul" name="judul" value="<?= $buku["judul"] ; ?>" placeholder="Text Input" required autofocus>
+            </div>
+            <div class="mb-3">
+                <label for="size" class="col-sm-2 col-form-label">Pengarang</label>
+                    <input type="text" class="form-control" id="pengarang" name="pengarang" value="<?= $buku["pengarang"] ; ?>" placeholder="Text Input" required>
+            </div>
+            <div class="mb-3">
+                <label for="brand" class="form-label">Penerbit</label>
+                    <input class="form-control" type="text" placeholder="Text Input" id="penerbit" name="penerbit" value="<?= $buku["penerbit"] ; ?>">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="col-sm-2 col-form-label">Tahun Terbit</label>
+                    <input type="text" class="form-control" id="tahun" name="tahun" placeholder="$" value="<?= $buku["tahun"] ; ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="category class="col-sm-2 col-form-label">Harga</label>
+                    <input type="text" class="form-control" id="harga" name="harga" placeholder="Text Input" value="<?= $buku["harga"] ; ?>" required>
+            </div>
+            <button type="submit" name="ubah" class="btn btn-outline-primary">Submit</button>
+            <a class="btn btn-primary" type="cancel" href="admin.php" name="cancel" role="button">Cancel</a>
+        </form>
+    </div>
+    <!-- End Form -->
+
+    
+
+    <!-- Script JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+ 
+  </body>
 </html>

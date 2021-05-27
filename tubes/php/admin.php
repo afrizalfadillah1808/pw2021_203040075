@@ -1,24 +1,14 @@
-<!-- 
-    NAMA : Muhammad Afrizal Fadillah
-    NPM : 203040075
-    Kelas : B
-    MataKuliah : Praktikum Pemrograman Web
-    Shift : Jumat, 10.00 WIB
- -->
 
 <?php
-    session_start();
-
-    if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
-        exit;
-    }
+   
     require 'functions.php';
-    $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY id ASC");
+    $buku = query("SELECT * FROM buku ORDER BY id ASC");
 
-    if (isset($_GET['cari'])) {
-        $mahasiswa = cari($_GET['keyword']);
+    // ketika tombol cari diklik
+    if(isset($_POST['cari'])) {
+        $buku = cari($_POST['keyword']);
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -38,51 +28,57 @@
         <a href="tambah.php"><button class="waves-effect waves-light btn">Tambah Data</button></a>
     </div>
     <br>
-    <form class="cari" action="" method="GET">
-        <input type="text" name="keyword" autofocus placeholder="Cari Mahasiswa.." autocomplete="off">
-        <button type="submit" name="cari" class="waves-effect waves-light btn">Cari!</button>
+    <form class="cari" action="" method="POST">
+        <input type="text" name="keyword" autofocus placeholder="Cari Buku.." autocomplete="off" class="keyword">
+        <button type="submit" name="cari" class="waves-effect waves-light btn tombol-cari">Cari!</button>
         <button type="submit" class="waves-effect waves-light btn">
             <a href="admin.php" style="text-decoration: none; color: white;">Kembali</a>
         </button>
     </form>
     <br>
-    <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
-        <tr>
-            <th>No</th>
-            <th>Opsi</th>
-            <th>Foto</th>
-            <th>NRP</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Jurusan</th>
-        </tr>
-    <?php if (empty($mahasiswa)) : ?>
-        <tr>
-            <td colspan="7">
-                <h1>Data tidak ditemukan</h1>
-            </td>
-        </tr>
-    <?php else : ?>
-        <?php $i = 1;?>
-        <?php foreach ($mahasiswa as $mhs) : ?>
+    <div class="container">
+        <table class="table bordered striped" border="1" cellpadding="13" cellspacing="0" style="background-color: #00adb5;">
             <tr>
-                <td><?= $i; ?></td>
-                <td>
-                    <a href="ubah.php?id=<?=$mhs['id'] ?>"><button class="btn btn-secondary">Ubah</button></a>
-                    <a href="hapus.php?id=<?=$mhs['id'] ?>" onclick="return confirm('Hapus Data??')"><button class="btn btn-secondary">Hapus</button></a>
-                </td>
-                <td><img src="../assets/img/<?= $mhs['img']; ?>" alt=""></td>
-                <td><?= $mhs['nrp']; ?></td>
-                <td><?= $mhs['nama']; ?></td>
-                <td><?= $mhs['email']; ?></td>
-                <td><?= $mhs['jurusan']; ?></td>
+                <th>No</th>
+                <th>Opsi</th>
+                <th>Gambar</th>
+                <th>Judul</th>
+                <th>Pengarang</th>
+                <th>Penerbit</th>
+                <th>Tahun Terbit</th>
+                <th>Harga</th>
             </tr>
-            <?php $i++; ?>
-        <?php endforeach; ?>
-    <?php endif; ?>
-    </table>
+
+        <?php if (empty($buku)) : ?>
+            <tr>
+                <td colspan="4">
+                    <p style="color: red; font-style: italic;">Data buku tidak ditemukan</p>
+                </td>
+            </tr>
+        <?php else : ?>
+            <?php $i = 1;?>
+            <?php foreach ($buku as $bk) : ?>
+                <tr>
+                    <td><?= $i; ?></td>
+                    <td>
+                        <a href="ubah.php?id=<?=$bk['id'] ?>"><button class="btn btn-secondary">Ubah</button></a>
+                        <a href="hapus.php?id=<?=$bk['id'] ?>" onclick="return confirm('Hapus Data??')"><button class="btn btn-secondary">Hapus</button></a>
+                    </td>
+                    <td><img src="../assets/img/<?= $bk['img']; ?>" alt=""></td>
+                    <td><?= $bk['judul']; ?></td>
+                    <td><?= $bk['pengarang']; ?></td>
+                    <td><?= $bk['penerbit']; ?></td>
+                    <td><?= $bk['tahun']; ?></td>
+                    <td><?= $bk['harga']; ?></td>
+                </tr>
+                <?php $i++; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </table>
+    </div>
     <br>
     <br>
     <button class="btn btn-info"><a href="logout.php" style="text-decoration: none; color: white;">Logout</a></button>
+    
 </body>
 </html>
