@@ -35,7 +35,7 @@ $buku = query("SELECT * FROM buku WHERE id = $id")[0];
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col m6 s12">
+      <div class="grid-example col s12">
         <div class="card">
           <div class="card-content">
             <table border="1px" cellpadding="6px" cellspacing="0">
@@ -91,15 +91,6 @@ $buku = query("SELECT * FROM buku WHERE id = $id")[0];
                   <td colspan="3"><a href="../index.php" class="waves-effect waves-light red darken-4 btn-small right"> Kembali</a></td>
                 </tr>
               </table>
-            </div>
-          </div>
-        </div>
-        <div class="col m6 s12">
-          <div class="card grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title  center"><?= $buku["judul"]; ?></span>
-                <p>Deskripsi : </p>
-                <p><?= $buku["sinopsis"]; ?></p>
             </div>
           </div>
         </div>

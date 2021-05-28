@@ -1,5 +1,15 @@
 
 <?php
+    // Muhammad Afrizal Fadillah
+    // 203040075
+    // Tugas Besar Pemrograman Web
+
+    session_start();
+
+    if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+    }
    
     require 'functions.php';
     $buku = query("SELECT * FROM buku ORDER BY id ASC");
