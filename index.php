@@ -71,7 +71,7 @@ body, html {height: 100%}
     <h5>
         <button class="w3-button w3-khaki"><a href="praktikum/tugas1/tugas1.php" target="_blank">Tugas 1</a></button>
         <button class="w3-button w3-khaki"><a href="praktikum/tugas2/latihan2d.php" target="_blank">Tugas 2</a></button>
-        <button class="w3-button w3-khaki"><a href="praktikum/tugas3/latihan3e.php" target="_blank">Tugas 12</a></button>
+        <button class="w3-button w3-khaki"><a href="praktikum/tugas3/latihan3e.php" target="_blank">Tugas 3</a></button>
         <button class="w3-button w3-khaki"><a href="praktikum/tugas4/latihan4c/index.php" target="_blank">Tugas 4</a></button>
         <button class="w3-button w3-khaki"><a href="praktikum/tugas5/tugas/index.php" target="_blank">Tugas 5</a></button>
         <button class="w3-button w3-khaki"><a href="praktikum/tugas6/latihan6c/index.php" target="_blank">Tugas 6</a></button>
