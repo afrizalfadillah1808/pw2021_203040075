@@ -9,8 +9,8 @@
 <?php
 function koneksi()
 {
-    $conn = mysqli_connect("localhost", "root", "");
-    mysqli_select_db($conn, "pw_tubes_203040075");
+    $conn = mysqli_connect("localhost", "pw20075_pw2021_203040075", "q#YE;G7mz+,w");
+    mysqli_select_db($conn, "pw20075_pw2021_203040075");
 
     return $conn;
 }
