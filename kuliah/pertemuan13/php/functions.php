@@ -1,7 +1,7 @@
 <?php
 function koneksi()
 {
-    return mysqli_connect("localhost", "pw20075_pw2021_203040075", "KwQ0AmA&r_0X", "pw20075_pw2021_203040075");
+    return mysqli_connect("localhost", "root", "", "pw_tubes_203040075");
 }
 function query($query)
 {
