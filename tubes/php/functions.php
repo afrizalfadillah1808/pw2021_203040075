@@ -200,7 +200,7 @@ function registrasi($data)
     $password_baru = password_hash($password1, PASSWORD_DEFAULT) ;
 
     // insert ke tabel user
-    $query = "INSERT INTO user VALUES (null, '$username', '$password_baru', '$status')" ;
+    $query = "INSERT INTO user VALUES (NULL, '$username', '$password_baru', '$status')" ;
 
     mysqli_query($conn, $query) or die(mysqli_error($conn)) ;
 
