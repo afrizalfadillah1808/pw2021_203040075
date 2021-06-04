@@ -2,8 +2,8 @@
 <?php
 function koneksi()
 {
-    $conn = mysqli_connect("localhost", "root", "");
-    mysqli_select_db($conn, "tubes_pw_203040075");
+    $conn = mysqli_connect("localhost", "pw20075", "#Akun#203040075#");
+    mysqli_select_db($conn, "pw20075_tubes_pw_203040075");
 
     return $conn;
 }
